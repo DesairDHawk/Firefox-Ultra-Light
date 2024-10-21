@@ -1,0 +1,101 @@
+#TabsToolbar {
+  visibility: collapse !important;
+}
+
+#nav-bar {
+  border-top: none !important;
+}
+
+#sidebar-box {
+  min-width: 85px !important;
+}
+
+#nav-bar-customization-target {
+  flex-wrap: wrap;
+}
+
+#nav-bar-customization-target > toolbaritem:first-child {
+  padding-left: 0 !important;
+}
+
+toolbarbutton {
+  padding: 0 !important;
+}
+
+#minimize-window-button_nanpuyue_com-browser-action {
+  margin-right: 30px;
+}
+
+#navigator-toolbox {
+  position: absolute;
+  z-index: 1;
+}
+
+#urlbar-container {
+  width: 190px !important;
+  flex: auto !important;
+  margin: 2px !important;
+  padding: 0 !important;
+  font-size: 10px;
+}
+
+#menubar-items {
+  display: none;
+}
+
+.titlebar-buttonbox {
+  display: none;
+}
+
+#nav-bar-customization-target > toolbarpaletteitem[place="toolbar"] {
+  visibility: visible !important;
+  display: -moz-box !important;
+  position: static !important;
+}
+
+#nav-bar .toolbarbutton-1,
+#nav-bar .chromeclass-toolbar-additional,
+#nav-bar .toolbarbutton-1[overflowedItem] {
+  visibility: visible !important;
+  display: -moz-box !important;
+}
+
+#nav-bar .customization-target {
+  overflow: visible !important;
+}
+
+#nav-bar-overflow-button {
+  display: none !important;
+}
+
+/* toolbaritem:not("#minimize-window-button_nanpuyue_com-browser-action") {
+  margin-inline: 0 !important;
+} */
+
+toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.bookmark-item {
+  padding: 4px !important;
+}
+
+#PlacesToolbarItems {
+  flex-wrap: wrap !important;
+}
+
+/* Отключаем кнопку переполнения закладок и делаем все закладки видимыми */
+#PlacesChevron {
+  display: none !important; /* Убираем кнопку переполнения */
+}
+
+#personal-bookmarks .bookmark-item {
+  visibility: visible !important; /* Делаем все элементы видимыми */
+  max-width: none !important; /* Убираем ограничение по ширине */
+  overflow: visible !important; /* Отключаем переполнение */
+}
+
+#PersonalToolbar {
+  max-height: fit-content !important;
+}
