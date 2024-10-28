@@ -12,13 +12,14 @@
 tab-item {
   overflow: hidden !important;
   cursor: pointer;
+  padding: 1px;
 }
 
 tab-item::after{
 content: attr(data-current-uri);
-  color: rgb(22,252,207);
+  color: var(--theme-colors-toolbar_field_text);
   white-space: nowrap;
-  padding: 1px 5px 8px;
+  padding: 1px 5px 5px;
   margin-top: -6px;
   font-size: 10px;
   mask-image: linear-gradient(to left, transparent 0, black 2em);
@@ -48,8 +49,11 @@ tab-item tab-favicon{
 }
 
 tab-item.active{
-  background: rgb(115,115,115);
-  border-radius: 7px;
+  background: var(--theme-colors-tab_selected);
+  color: var(--theme-colors-toolbar_text);
+  border-radius: 4px;
+  border: 1px solid var(--theme-colors-tab_line);
+  padding: 0;
 }
 
 tab-item.active::after{
