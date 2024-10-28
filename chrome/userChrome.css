@@ -83,6 +83,7 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 
 #PlacesToolbarItems {
   flex-wrap: wrap !important;
+  justify-content: space-between;
 }
 
 /* Отключаем кнопку переполнения закладок и делаем все закладки видимыми */
