@@ -27,6 +27,7 @@ toolbarbutton {
 }
 
 #navigator-toolbox {
+  border-bottom: 0 !important;
   position: absolute;
   z-index: 1;
 }
@@ -83,6 +84,7 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 
 #PlacesToolbarItems {
   flex-wrap: wrap !important;
+  justify-content: space-between;
 }
 
 /* Отключаем кнопку переполнения закладок и делаем все закладки видимыми */
@@ -98,4 +100,11 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 
 #PersonalToolbar {
   max-height: fit-content !important;
+}
+
+.sidebar-splitter {
+  border-color: unset !important;
+  min-width: unset !important;
+  margin-inline-start: -4px !important;
+  border-inline-end-width: 0px !important;
 }

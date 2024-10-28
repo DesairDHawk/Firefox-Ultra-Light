@@ -41,8 +41,8 @@ function updateNavigatorToolboxWidth() {
     const minimizeWindowButton = document.getElementById("minimize-window-button_nanpuyue_com-browser-action");
 
     if (navigatorToolbox && sidebarBox) {
-        navigatorToolbox.style.width = `${sidebarBox.clientWidth - 1}px`;
-        minimizeWindowButton.style.marginRight = `${Math.abs(sidebarBox.clientWidth - 57)}px`;
+        navigatorToolbox.style.width = `${sidebarBox.clientWidth}px`;
+        minimizeWindowButton.style.marginRight = `${Math.abs(sidebarBox.clientWidth - 56)}px`;
         minimizeWindowButton.style.marginLeft = `0px`;
     }
 }
