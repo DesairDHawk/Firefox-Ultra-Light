@@ -6,8 +6,7 @@
 * [uBlock Origin](https://addons.mozilla.org/ru/firefox/addon/ublock-origin/)
 * [privacy Badger](https://addons.mozilla.org/ru/firefox/addon/privacy-badger17/)
 * [Translate Web Pages](https://addons.mozilla.org/ru/firefox/addon/translate-web-pages-custom/)
-* [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/)
-Для Tree Style Tab, в `настройках` расширения, вставляем этот CSS:
+* [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS:
 ```CSS
 tab-item {
   overflow: hidden !important;
