@@ -105,6 +105,6 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 .sidebar-splitter {
   border-color: unset !important;
   min-width: unset !important;
-  margin-inline-start: -4px !important;
+  margin-inline-start: -5px !important;
   border-inline-end-width: 0px !important;
 }
