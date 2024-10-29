@@ -131,7 +131,7 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 Закрепите расширения Close Button и Minimize Button на пенели инструментов, а также нажав по панели ПКМ зайдите в настройки панели и поставьте на нее все нужные вам инструменты.
 **Обязательно уберите галочки** с *панель меню* и *Заголовок* ![изображение](https://github.com/user-attachments/assets/fdf696e3-f5b2-4233-9b33-2cc05ee92395) ![изображение](https://github.com/user-attachments/assets/9272b8fa-0585-48ba-b738-afddb944f73a)
 
-Поставьте кнопку Close Button и Minimize Button в самое начало именно так, **иначе не будет работать** как надо ![изображение](https://github.com/user-attachments/assets/ef35fc99-b0ad-41bb-89a9-a2e05968d5f8)
+Поставьте кнопку Close Button и Minimize Button в самое начало именно так, **иначе не будет работать** как надо ![изображение](https://github.com/user-attachments/assets/2eefb44e-a4b5-4e8d-a66c-ad484751223b)
 
 Далее скачиваем папку [chrome](https://github.com/DesairDHawk/Firefox-Ultra-Light/tree/main/chrome) и закидываем её в папку `C:\Users\...\AppData\Roaming\Mozilla\Firefox\Profiles\...` (где точки - ваш username) и подтверждаем замену.
 Теперь, что бы применить изменения удаляем все файлы которые содержат в названии `scriptCache` по этому пути `C:\Users\...\AppData\Local\Mozilla\Firefox\Profiles\...\startupCache` (где точки - ваш username) обычно их от 1 до 4
