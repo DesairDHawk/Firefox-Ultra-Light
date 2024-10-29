@@ -80,6 +80,7 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 
 .bookmark-item {
   padding: 4px !important;
+  margin: 0px !important;
 }
 
 #PlacesToolbarItems {
