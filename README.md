@@ -13,6 +13,7 @@ tab-item {
   overflow: hidden !important;
   cursor: pointer;
   padding: 1px;
+  margin-right: 1px;
 }
 
 tab-item::after{
@@ -57,7 +58,7 @@ tab-item.active{
 }
 
 tab-item.active::after{
-	color: var(--theme-colors-toolbar_field_focus);
+	color: var(--theme-colors-tab_line);
 }
 
 tab-item .background{
