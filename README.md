@@ -68,7 +68,7 @@ tab-item .background{
 }
 ```
 #### Тема
-Можно использовать любые темы. На скриншоте используется Monokai Ryo Ocean
+Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 #### Настройка браузера
 В адресной строке браузера пишем `about:config`, далее в поисковую строку на этой странице вставляем `true` для следующих параметров (если параметр не находит, то создайте его сами):
 * `javascript.enabled`
