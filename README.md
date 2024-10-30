@@ -11,118 +11,27 @@
 * [Translate Web Pages](https://addons.mozilla.org/ru/firefox/addon/translate-web-pages-custom/)
 * [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS:
 ```CSS
-tab-item {
-  overflow: hidden !important;
-  cursor: pointer;
-  padding: 1px;
-  margin-right: 1px;
-}
-
-tab-item::after{
-content: attr(data-current-uri);
-  color: var(--theme-colors-toolbar_field_text);
-  white-space: nowrap;
-  padding: 1px 5px 5px;
-  margin-top: -6px;
-  font-size: 10px;
-  mask-image: linear-gradient(to left, transparent 0, black 2em);
-}
-
-tab-item tab-label {
-  overflow-y: hidden !important;
-  text-align:top;
-  white-space: nowrap !important;
-  display: -webkit-inline-box !important;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-tab-twisty{
-	display: none;
-}
-
-tab-item-substance .ui{
-  	max-width: 100%;
-}
-
-tab-item tab-favicon{
-	margin-left: 0.25rem;
-}
-
-tab-item.active{
-  background: var(--theme-colors-tab_selected);
-  color: var(--theme-colors-toolbar_text);
-  border-radius: 4px;
-  border: 1px solid var(--theme-colors-tab_line);
-  padding: 0;
-}
-
-tab-item.active::after{
-	color: var(--theme-colors-tab_line);
-}
-
-tab-item .background{
-	display: none;
-}
+tab-item {overflow: hidden !important; cursor: pointer; padding: 1px; margin-right: 1px;}
+tab-item::after{content: attr(data-current-uri); color: var(--theme-colors-toolbar_field_text); white-space: nowrap; padding: 1px 5px 5px; margin-top: -6px; font-size: 10px; mask-image: linear-gradient(to left, transparent 0, black 2em);}
+tab-item tab-label {overflow-y: hidden !important; text-align:top; white-space: nowrap !important; display: -webkit-inline-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-top: 5px; margin-bottom: 5px;}
+tab-twisty{display: none;}
+tab-item-substance .ui{max-width: 100%;}
+tab-item tab-favicon{margin-left: 0.25rem;}
+tab-item.active{background: var(--theme-colors-tab_selected); color: var(--theme-colors-toolbar_text); border-radius: 4px; border: 1px solid var(--theme-colors-tab_line); padding: 0;}
+tab-item.active::after{color: var(--theme-colors-tab_line);}
+tab-item .background{display: none;}
 ```
 или
 ```CSS
-tab-item {
-  overflow: hidden !important;
-  cursor: pointer;
-  padding: 1px;
-  margin-right: 1px;
-}
-
-tab-item::after{
-content: attr(data-current-uri);
-  color: var(--theme-colors-toolbar_field_text);
-  white-space: nowrap;
-  padding: 1px 6px 7px;
-  margin-top: -6px;
-  font-size: 10px;
-  mask-image: linear-gradient(to left, transparent 0, black 2em);
-}
-
-tab-item tab-label {
-  overflow-y: hidden !important;
-  white-space: wrap !important;
-  display: -webkit-inline-box !important;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  margin-top: 7px;
-  margin-bottom: 12px;
-}
-
-tab-twisty{
-	display: none;
-}
-
-tab-item-substance .ui{
-  	max-width: 100%;
-}
-
-tab-item tab-favicon{
-	margin-left: 0.25rem;
-}
-
-tab-item.active{
-  background: var(--theme-colors-tab_selected);
-  color: var(--theme-colors-toolbar_text);
-  border-radius: 4px;
-  border: 1px solid var(--theme-colors-tab_line);
-  padding: 0;
-}
-
-tab-item.active::after{
-	color: var(--theme-colors-tab_line);
-}
-
-tab-item .background{
-	display: none;
-}
+tab-item {overflow: hidden !important; cursor: pointer; padding: 1px; margin-right: 1px;}
+tab-item::after{content: attr(data-current-uri); color: var(--theme-colors-toolbar_field_text); white-space: nowrap; padding: 1px 6px 7px; margin-top: -6px; font-size: 10px; mask-image: linear-gradient(to left, transparent 0, black 2em);}
+tab-item tab-label {overflow-y: hidden !important; white-space: wrap !important; display: -webkit-inline-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 2; margin-top: 7px; margin-bottom: 12px;}
+tab-twisty{display: none;}
+tab-item-substance .ui{max-width: 100%;}
+tab-item tab-favicon{margin-left: 0.25rem;}
+tab-item.active{background: var(--theme-colors-tab_selected); color: var(--theme-colors-toolbar_text); border-radius: 4px; border: 1px solid var(--theme-colors-tab_line); padding: 0;}
+tab-item.active::after{color: var(--theme-colors-tab_line);}
+tab-item .background{display: none;}
 ```
 #### Тема
 Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
