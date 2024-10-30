@@ -69,10 +69,6 @@ toolbarbutton {
   display: none !important;
 }
 
-/* toolbaritem:not("#minimize-window-button_nanpuyue_com-browser-action") {
-  margin-inline: 0 !important;
-} */
-
 toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
   margin-left: 0 !important;
   margin-right: 0 !important;
