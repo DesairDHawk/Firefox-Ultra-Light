@@ -104,6 +104,7 @@ toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
 }
 
 .sidebar-splitter {
-  width: unset !important;
+  width: 2px !important;
+  margin-left: -1px;
   border: unset !important;
 }
