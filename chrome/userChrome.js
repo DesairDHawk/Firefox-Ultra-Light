@@ -4,6 +4,9 @@ userChrome.import("/userChrome/my_other_script_name.uc.js", "UChrm");
 // Function to handle navbar modifications
 function modifyNavBar() {
     const navBar = document.getElementById("nav-bar");
+    const urlbar = document.getElementById('urlbar');
+    const ulbarInput = document.querySelector('.urlbar-input-container');
+    const urlbarSearch = document.querySelector('.urlbar-searchmode-and-input-box-container');
     if (navBar) {
         // Remove overflow attributes
         ["overflowable", "default-overflowbutton", "default-overflowtarget", "default-overflowpanel", "addon-webext-overflowbutton", "addon-webext-overflowtarget"].forEach(attr => navBar.removeAttribute(attr));
@@ -22,6 +25,7 @@ function modifyNavBar() {
             button.style.display = "-moz-box";
         });
     }
+    urlbar.insertBefore(urlbarSearch, ulbarInput);
 }
 
 // Function to update sidebar header height
@@ -99,7 +103,9 @@ function toggleNavigatorToolboxPosition() {
             
             urlbarContainer.style.transform = 'unset';
             // urlbarContainer.style.transformOrigin = 'center';
-            urlbarContainer.style.fontSize = '10px';
+            urlbarContainer.style.fontSize = '10px'; 
+
+            // urlbar.insertBefore(urlbarSearch, ulbarInput);
 
             toolbox.style.marginTop = 'unset';
             toolbox.style.height = 'auto';
@@ -171,6 +177,13 @@ window.addEventListener("load", () => {
         // Перемещаем кнопку #PanelUI-button после #close-window-button_nanpuyue_com-browser-action
         targetContainer.insertBefore(panelUIButton, minimizeWindowButton.nextSibling);
     }
+
+    document.getElementById('close-window-button_nanpuyue_com-browser-action').onclick = () => {
+        const sidebarBox = document.getElementById('sidebar-box');
+        if (sidebarBox.hasAttribute('hidden')){
+            toggleNavigatorToolboxPosition();
+        }
+    }
 });
 
 // Функция для переключения flexDirection у body
@@ -200,13 +213,6 @@ window.addEventListener('keydown', (event) => {
         toggleBodyFlexDirection();
     }
 });
-
-document.getElementById('close-window-button_nanpuyue_com-browser-action').onclick = () => {
-    const sidebarBox = document.getElementById('sidebar-box');
-    if (sidebarBox.hasAttribute('hidden')){
-        toggleNavigatorToolboxPosition();
-    }
-}
 
 // Получаем элемент #urlbar-container
 const urlbarContainer = document.getElementById('urlbar-container');
