@@ -4,19 +4,16 @@ userChrome.import("/userChrome/my_other_script_name.uc.js", "UChrm");
 // Function to handle navbar modifications
 function modifyNavBar() {
     const navBar = document.getElementById("nav-bar");
-    const urlbar = document.getElementById('urlbar');
-    const ulbarInput = document.querySelector('.urlbar-input-container');
-    const urlbarSearch = document.querySelector('.urlbar-searchmode-and-input-box-container');
     if (navBar) {
         // Remove overflow attributes
         ["overflowable", "default-overflowbutton", "default-overflowtarget", "default-overflowpanel", "addon-webext-overflowbutton", "addon-webext-overflowtarget"].forEach(attr => navBar.removeAttribute(attr));
-
+        
         // Hide overflow button
         const overflowButton = document.getElementById("nav-bar-overflow-button");
         if (overflowButton) {
             overflowButton.style.display = "none";
         }
-
+        
         // Show hidden buttons
         const hiddenButtons = document.querySelectorAll(".toolbarbutton-1[overflowedItem]");
         hiddenButtons.forEach(button => {
@@ -25,7 +22,6 @@ function modifyNavBar() {
             button.style.display = "-moz-box";
         });
     }
-    urlbar.insertBefore(urlbarSearch, ulbarInput);
 }
 
 // Function to update sidebar header height
@@ -103,9 +99,7 @@ function toggleNavigatorToolboxPosition() {
             
             urlbarContainer.style.transform = 'unset';
             // urlbarContainer.style.transformOrigin = 'center';
-            urlbarContainer.style.fontSize = '10px'; 
-
-            // urlbar.insertBefore(urlbarSearch, ulbarInput);
+            urlbarContainer.style.fontSize = '10px';
 
             toolbox.style.marginTop = 'unset';
             toolbox.style.height = 'auto';
@@ -184,6 +178,33 @@ window.addEventListener("load", () => {
             toggleNavigatorToolboxPosition();
         }
     }
+
+    // Получаем элемент #urlbar-container
+    const urlbarContainer = document.getElementById('urlbar-container');
+    const urlbarInput = document.getElementById('urlbar-input'); // Поле ввода поисковой строки
+    // Назначаем обработчики событий focus и blur для поля ввода поисковой строки
+    urlbarInput.addEventListener('focus', setMinWidth);
+    urlbarInput.addEventListener('blur', removeMinWidth);
+    // Функция для установки min-width
+    function setMinWidth() {
+        urlbarContainer.style.minWidth = '440px';
+    }
+
+    // Функция для сброса min-width
+    function removeMinWidth() {
+        urlbarContainer.style.minWidth = '';
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        const ubar = document.getElementById('urlbar');
+        const uInput = document.querySelector('.urlbar-input-container');
+        if (document.querySelector('.urlbar-input-box') != null){
+            uSearch = document.querySelector('.urlbar-input-box');
+        } else {
+            uSearch = document.querySelector('.urlbar-searchmode-and-input-box-container');
+        }
+        ubar.insertBefore(uSearch, uInput);
+    });
 });
 
 // Функция для переключения flexDirection у body
@@ -213,21 +234,3 @@ window.addEventListener('keydown', (event) => {
         toggleBodyFlexDirection();
     }
 });
-
-// Получаем элемент #urlbar-container
-const urlbarContainer = document.getElementById('urlbar-container');
-const urlbarInput = document.getElementById('urlbar-input'); // Поле ввода поисковой строки
-
-// Функция для установки min-width
-function setMinWidth() {
-    urlbarContainer.style.minWidth = '440px';
-}
-
-// Функция для сброса min-width
-function removeMinWidth() {
-    urlbarContainer.style.minWidth = '';
-}
-
-// Назначаем обработчики событий focus и blur для поля ввода поисковой строки
-urlbarInput.addEventListener('focus', setMinWidth);
-urlbarInput.addEventListener('blur', removeMinWidth);
