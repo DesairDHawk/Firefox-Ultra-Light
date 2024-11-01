@@ -39,15 +39,15 @@ tab-item tab-label {
 }
 
 tab-twisty{
-	display: none;
+  display: none;
 }
 
 tab-item-substance .ui{
-  	max-width: 100%;
+  max-width: 100%;
 }
 
 tab-item tab-favicon{
-	margin-left: 0.25rem;
+  margin-left: 0.25rem;
 }
 
 tab-item.active{
@@ -59,11 +59,11 @@ tab-item.active{
 }
 
 tab-item.active::after{
-	color: var(--theme-colors-tab_line);
+  color: var(--theme-colors-tab_line);
 }
 
 tab-item .background{
-	display: none;
+  display: none;
 }
 ```
 #### Тема
