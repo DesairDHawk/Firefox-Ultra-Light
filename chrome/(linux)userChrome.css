@@ -1,3 +1,29 @@
+#urlbar {
+  height: auto !important;
+}
+
+#urlbar-container {
+  min-height: 43px;
+}
+
+#identity-icon-box {
+  height: 22px;
+  padding-inline: 3px !important;
+}
+
+#page-action-buttons {
+  margin-left: auto;
+}
+
+#translations-button {
+  display: none;
+}
+
+.urlbar-input-box,
+.urlbar-searchmode-and-input-box-container {
+  margin: 3px 5px -1px 5px;
+}
+
 #TabsToolbar {
   visibility: collapse !important;
 }
