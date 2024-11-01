@@ -1,4 +1,4 @@
-![изображение](https://github.com/user-attachments/assets/6b5acfb2-d80d-4616-8282-8cd60b68cc5b)
+![изображение](https://github.com/user-attachments/assets/76fc4263-0c55-4694-b930-6e1ce4339a66)
 
 ## Всё что нужно для установки
 #### Расширения
