@@ -261,7 +261,7 @@ user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 
 Поставьте кнопку Close Button и Minimize Button в самое начало именно так, **иначе не будет работать** как надо ![изображение](https://github.com/user-attachments/assets/2eefb44e-a4b5-4e8d-a66c-ad484751223b)
 
-Далее скачиваем папку [chrome](https://github.com/DesairDHawk/Firefox-Ultra-Light/tree/main/chrome) и закидываем её в папку `C:\Users\...\AppData\Roaming\Mozilla\Firefox\Profiles\...` (где точки - ваш username) и подтверждаем замену.
+Далее скачиваем из папки [chrome](https://github.com/DesairDHawk/Firefox-Ultra-Light/tree/main/chrome) `userChrome.css` и `userChrome.js` для *Стандартной версии* или файлы `(v2)` для *2 версии* (не забудьте стереть `(v2) ` из названий файла для корректной работы) и закидываем их в папку `C:\Users\...\AppData\Roaming\Mozilla\Firefox\Profiles\...\chrome` (где точки - ваш username), если папки `chrome` нет, то создайте.
 Теперь, что бы применить изменения удаляем все файлы которые содержат в названии `scriptCache` по этому пути `C:\Users\...\AppData\Local\Mozilla\Firefox\Profiles\...\startupCache` (где точки - ваш username) обычно их от 1 до 4
 ![изображение](https://github.com/user-attachments/assets/33356e7f-ad59-48bb-8306-be285c16f2b6)
 
