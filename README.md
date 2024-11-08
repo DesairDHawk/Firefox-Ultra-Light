@@ -69,6 +69,132 @@ tab-item .background{
   display: none;
 }
 ```
+
+#### (Для 2 версии)
+```CSS
+:root {
+    --tab-size: 34px;
+    --timeout-hide: 0.25s;
+}
+
+:root.left #tabbar {
+    direction: unset !important;
+}
+
+#tabbar,
+#normal-tabs-container {
+    scrollbar-width: none;
+}
+
+#tabbar.scrollbar-autohide #normal-tabs-container.overflow tab-item .extra-items-container.indent {
+    width: 0 !important;
+}
+
+#tabbar {
+    border-radius: 9px;
+}
+
+tab-item {
+    overflow: hidden !important;
+    cursor: pointer;
+    padding-top: 0px;
+    margin: 3px;
+    border-radius: 7px;
+    max-width: 100%;
+    .background {
+        display: none;
+    }
+}
+
+tab-item::after {
+    content: attr(data-current-uri);
+    color: var(--theme-colors-toolbar_field_text);
+    white-space: nowrap;
+    font-size: 10px;
+    mask-image: linear-gradient(to left, transparent 0, black 2em);
+    position: absolute;
+    bottom: 4px;
+    left: 26px;
+    width: 200px;
+}
+
+tab-item.active {
+    background: var(--theme-colors-tab_selected);
+    color: var(--theme-colors-toolbar_text);
+    box-shadow: 1px 1px var(--theme-colors-tab_line), 1px -1px var(--theme-colors-tab_line), -1px 1px var(--theme-colors-tab_line), -1px -1px var(--theme-colors-tab_line), 0px 0px 5px var(--theme-colors-tab_line);
+}
+
+tab-item.active::after {
+    color: var(--theme-colors-tab_line);
+}
+
+tab-item-substance {
+    margin-left: 0 !important;
+    height: auto;
+    padding: 0;
+    .ui {
+        max-width: 100%;
+    }
+}
+
+.left.sidebar:not(:hover) {
+    tab-item {
+        transition: max-width 300ms ease-in-out var(--timeout-hide) !important;
+        max-width: 50px;
+        padding-top: 0px;
+    }
+    tab-item::after {
+        transition: all 300ms ease-in-out var(--timeout-hide) !important;
+        opacity: 0;
+    }
+    tab-item tab-label {
+        transition: all 300ms ease-in-out var(--timeout-hide) !important;
+        opacity: 0 !important;
+    }
+    tab-favicon {
+        transition: all 300ms ease-in-out var(--timeout-hide) !important;
+        transform-origin: -12px 8px;
+        transform: scale(1.5);
+    }
+    .overflow-indicator.end {
+        bottom: 0px;
+    }
+}
+
+.newtab-button {
+    display: none;
+}
+
+.tab:not(:hover) .closebox {
+    visibility: hidden;
+}
+
+.tab:hover {
+    background: var(--theme-colors-toolbar);
+}
+
+.contextual-identity-marker {
+    height: var(--tab-size);
+    right: 0;
+    top: -1px;
+    border-radius: 7px;
+    width: 100%;
+    mask-image: linear-gradient(to top, transparent 0, rgba(0, 0, 0, 0.4) 40px);
+}
+
+tab-twisty {
+    display: none;
+}
+
+tab-favicon {
+    margin: 0.7rem 0.1rem 0.7rem 0.5rem;
+}
+
+tab-label {
+    margin-top: -12px;
+}
+```
+
 #### Тема
 Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 #### Настройка браузера
