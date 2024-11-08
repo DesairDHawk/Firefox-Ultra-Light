@@ -1,0 +1,170 @@
+#urlbar {
+    height: auto !important;
+}
+
+#urlbar-container {
+    min-height: 43px;
+}
+
+#identity-icon-box {
+    height: 22px;
+    padding-inline: 3px !important;
+}
+
+#page-action-buttons {
+    margin-left: auto;
+}
+
+#translations-button {
+    display: none;
+}
+
+.urlbar-input-box,
+.urlbar-searchmode-and-input-box-container {
+    margin: 3px 5px -1px 5px;
+}
+
+#TabsToolbar {
+    visibility: collapse !important;
+}
+
+#nav-bar {
+    border-top: none !important;
+}
+
+:root {
+    --thin-tab-width: 56px;
+    --wide-tab-width: 253px;
+}
+
+#sidebar-box {
+    min-width: var(--thin-tab-width) !important;
+}
+
+#sidebar-header {
+    display: none;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all 300ms ease-in-out 0.25s !important;
+    min-width: var(--thin-tab-width) !important;
+    max-width: var(--thin-tab-width) !important;
+    z-index: 2;
+    background: transparent !important;
+    border-radius: 0px 9px 9px 0px;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
+    transition: all 300ms !important;
+    min-width: var(--wide-tab-width) !important;
+    max-width: var(--wide-tab-width) !important;
+    z-index: 1;
+}
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
+    margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
+}
+
+#nav-bar-customization-target {
+    flex-wrap: wrap;
+}
+
+#nav-bar-customization-target > toolbaritem:first-child {
+    padding-left: 0 !important;
+}
+
+#nav-bar-customization-target > :nth-child(2n of :not(:last-child)) {
+    margin-right: calc(100% - 56px) !important;
+}
+
+#nav-bar-customization-target > #urlbar-container {
+    width: 100% !important;
+}
+
+toolbarbutton {
+    padding: 0 !important;
+}
+
+.toolbaritem-combined-buttons {
+    margin-inline: 0 !important;
+}
+
+#navigator-toolbox {
+    border-bottom: 0 !important;
+    position: absolute;
+    z-index: 5;
+    width: var(--thin-tab-width);
+}
+
+#urlbar-container {
+    width: 190px !important;
+    flex: auto !important;
+    margin: 2px !important;
+    padding: 0 !important;
+    font-size: 10px;
+}
+
+#menubar-items {
+    display: none;
+}
+
+.titlebar-buttonbox {
+    display: none;
+}
+
+#nav-bar-customization-target > toolbarpaletteitem[place="toolbar"] {
+    visibility: visible !important;
+    display: -moz-box !important;
+    position: static !important;
+}
+
+#nav-bar .toolbarbutton-1,
+#nav-bar .chromeclass-toolbar-additional,
+#nav-bar .toolbarbutton-1[overflowedItem] {
+    visibility: visible !important;
+    display: -moz-box !important;
+}
+
+#nav-bar .customization-target {
+    overflow: visible !important;
+}
+
+#nav-bar-overflow-button {
+    display: none !important;
+}
+
+toolbaritem:not(#minimize-window-button_nanpuyue_com-browser-action) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.bookmark-item {
+    padding: 4px !important;
+    margin: 0px !important;
+}
+
+#PlacesToolbarItems {
+    flex-wrap: wrap !important;
+    justify-content: space-between;
+}
+
+#PlacesChevron {
+    display: none !important;
+}
+
+#personal-bookmarks .bookmark-item {
+    visibility: visible !important;
+    max-width: none !important;
+    overflow: visible !important;
+}
+
+#PersonalToolbar {
+    max-height: fit-content !important;
+}
+
+.sidebar-splitter {
+    display: none;
+}
