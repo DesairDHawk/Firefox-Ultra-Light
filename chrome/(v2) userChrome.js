@@ -28,9 +28,61 @@ function modifyNavBar() {
 function updateSidebarHeaderHeight() {
     const sidebarBody = document.getElementById("sidebar-box");
     const navigatorToolbox = document.getElementById("navigator-toolbox");
+    const mainBrowser = document.querySelector("hbox#browser");
 
+    const computedHeight = window.screen.height - navigatorToolbox.clientHeight;
+
+    if (mainBrowser) {
+        mainBrowser.style.backgroundSize = `auto ${computedHeight}px`;
+        mainBrowser.style.backgroundPositionY = `top ${navigatorToolbox.clientHeight}px`;
+    }
     if (sidebarBody && navigatorToolbox) {
-        sidebarBody.style.marginTop = `${navigatorToolbox.clientHeight}px`;
+        sidebarBody.style.marginTop = `${navigatorToolbox.clientHeight + 10}px`;
+        sidebarBody.style.maxHeight = `calc(100% - ${navigatorToolbox.clientHeight + 20}px)`;
+
+        let beforeElement = mainBrowser.querySelector(".sidebar-before");
+        if (!beforeElement) {
+            let beforeElement = document.createElement("div");
+            beforeElement.className = "sidebar-before";
+            mainBrowser.insertBefore(beforeElement, sidebarBody);
+        }
+
+        let afterElement = mainBrowser.querySelector(".sidebar-after");
+        if (!afterElement) {
+            let afterElement = document.createElement("div");
+            afterElement.className = "sidebar-after";
+            sidebarBody.insertAdjacentElement("afterend", afterElement);
+        }
+
+        if (beforeElement != null) {
+            afterElement.style.backgroundSize = `auto ${computedHeight}px`;
+            beforeElement.style.backgroundSize = `auto ${computedHeight}px`;
+            beforeElement.style.backgroundPositionY = `top`;
+            beforeElement.style.top = `${navigatorToolbox.clientHeight}px`;
+        }
+
+        // const style = document.createElement("style");
+        // style.innerHTML = `
+        // #sidebar-box::before,
+        // #sidebar-box::after {
+        //     background-size: auto ${computedHeight}px;
+        // }
+        // #sidebar-box::before{
+        //     background-position-y: top;
+        // }
+        // `;
+        // document.head.appendChild(style);
+    }
+}
+
+function tryUpdateSidebarHeaderHeight(retries = 10) {
+    if (document.getElementById("browser")) {
+        updateSidebarHeaderHeight();
+    } else if (retries > 0) {
+        // Пробуем снова через 100 мс
+        setTimeout(() => tryUpdateSidebarHeaderHeight(retries - 1), 200);
+    } else {
+        console.error("Элемент #browser не найден.");
     }
 }
 
@@ -71,9 +123,6 @@ function toggleNavigatorToolboxPosition() {
                 navBarCustomizationTarget.removeChild(customSpring);
             }
 
-            urlbarContainer.style.transform = "unset";
-            urlbarContainer.style.fontSize = "10px";
-
             toolbox.style.marginTop = "unset";
             toolbox.style.height = "auto";
         } else {
@@ -105,10 +154,6 @@ function toggleNavigatorToolboxPosition() {
                 }
             }
 
-            urlbarContainer.style.transform = "scale(0.7)";
-            urlbarContainer.style.transformOrigin = "left";
-            urlbarContainer.style.fontSize = "15px";
-
             toolbox.style.marginTop = "-5px";
             toolbox.style.height = "25px";
         }
@@ -118,7 +163,7 @@ function toggleNavigatorToolboxPosition() {
 // Event listener for load event
 window.addEventListener("load", () => {
     modifyNavBar();
-    updateSidebarHeaderHeight();
+    tryUpdateSidebarHeaderHeight();
 
     // Observers for resizing
     const navigatorToolboxObserver = new ResizeObserver(updateSidebarHeaderHeight);
@@ -146,31 +191,107 @@ window.addEventListener("load", () => {
     const urlbarContainer = document.getElementById("urlbar-container");
     const urlbarInput = document.getElementById("urlbar-input"); // Поле ввода поисковой строки
     const urlbarSame = document.getElementById("urlbar");
+    const urlbarView = document.querySelector(".urlbar-input-container");
+    const navBar = document.getElementById("nav-bar");
     // Назначаем обработчики событий focus и blur для поля ввода поисковой строки
+    urlbarSame.style.visibility = "hidden";
+
+    let isClicking = false;
+
+    urlbarContainer.onclick = () => {
+        if (isClicking) return;
+        isClicking = true;
+
+        urlbarSame.style.visibility = "unset";
+        urlbarView.click();
+        setMinWidth();
+
+        isClicking = false;
+    };
+
     urlbarInput.addEventListener("focus", setMinWidth);
     urlbarInput.addEventListener("blur", removeMinWidth);
+
     // Функция для установки min-width
     function setMinWidth() {
         urlbarContainer.style.minWidth = "440px";
+        urlbarContainer.style.maxWidth = "540px";
         urlbarSame.style.marginLeft = "5px";
     }
 
     // Функция для сброса min-width
     function removeMinWidth() {
         urlbarContainer.style.minWidth = "";
+        urlbarContainer.style.maxWidth = "28px";
         urlbarSame.style.marginLeft = "";
+        urlbarSame.style.visibility = "hidden";
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const ubar = document.getElementById("urlbar");
-        const uInput = document.querySelector(".urlbar-input-container");
-        if (document.querySelector(".urlbar-input-box") != null) {
-            uSearch = document.querySelector(".urlbar-input-box");
-        } else {
-            uSearch = document.querySelector(".urlbar-searchmode-and-input-box-container");
+    function checkAndRemoveMinWidth() {
+        if (!navBar.hasAttribute("urlbar-exceeds-toolbar-bounds")) {
+            removeMinWidth();
         }
-        ubar.insertBefore(uSearch, uInput);
-    });
+    }
+    checkAndRemoveMinWidth();
+    const observerCheckRem = new MutationObserver(checkAndRemoveMinWidth);
+    observerCheckRem.observe(navBar, { attributes: true });
+
+    function updateSidebarHeight() {
+        const sidebb = document.querySelector('#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]');
+        const tabContainer = document.getElementById("tabbrowser-arrowscrollbox");
+        const navigatorToolbox = document.getElementById("navigator-toolbox");
+        const maxAvailibleHeight = window.screen.height - navigatorToolbox.scrollHeight - 20;
+
+        let tabsToHeight = 0;
+
+        if (sidebb && tabContainer) {
+            // Проверяем, что элементы существуют
+            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 6;
+            if (tabsToHeight > maxAvailibleHeight) {
+                tabsToHeight = maxAvailibleHeight;
+            }
+            sidebb.style.height = `${tabsToHeight}px`;
+        }
+
+        const beforeElement = document.querySelector(".sidebar-before");
+        const afterElement = document.querySelector(".sidebar-after");
+        const afterHeight = tabsToHeight + 10;
+
+        let timeoutHover;
+
+        if (!sidebb.hasEventListener) {
+            sidebb.addEventListener("mouseenter", () => {
+                clearTimeout(timeoutHover);
+                beforeElement.classList.add("hovered");
+                afterElement.classList.add("hovered");
+            });
+
+            sidebb.addEventListener("mouseleave", () => {
+                timeoutHover = setTimeout(() => {
+                    beforeElement.classList.remove("hovered");
+                    afterElement.classList.remove("hovered");
+                }, 280);
+            });
+
+            sidebb.hasEventListener = true;
+        }
+        afterElement.style.top = `${navigatorToolbox.scrollHeight + afterHeight}px`;
+        afterElement.style.backgroundPositionY = `top -${afterHeight}px`;
+    }
+
+    // Устанавливаем начальную высоту с небольшой задержкой
+    setTimeout(updateSidebarHeight, 500);
+
+    // Наблюдаем за изменением количества вкладок
+    const observer = new MutationObserver(updateSidebarHeight);
+
+    const tabContainer = document.getElementById("tabbrowser-arrowscrollbox");
+    if (tabContainer) {
+        // Убедимся, что контейнер вкладок существует перед наблюдением
+        observer.observe(tabContainer, { childList: true });
+    } else {
+        console.error("Контейнер вкладок не найден.");
+    }
 });
 
 // Функция для переключения flexDirection у body
@@ -192,8 +313,11 @@ function toggleBodyFlexDirection() {
 // Обработчик для нажатия клавиши F1
 window.addEventListener("keydown", (event) => {
     if (event.key === "F1") {
+        // Останавливаем стандартное поведение F1
         event.preventDefault();
+        // Вызываем функцию переключения позиции navigator-toolbox
         toggleNavigatorToolboxPosition();
+        // Вызываем функцию переключения flexDirection у body
         toggleBodyFlexDirection();
     }
 });
