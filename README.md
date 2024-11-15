@@ -92,7 +92,7 @@ body,
 }
 
 .closebox{
-right: 0px !important;
+right: -4px !important; 
 }
 
 #tabbar #normal-tabs-container {
@@ -178,7 +178,7 @@ tab-item.active::after {
 }
 
 .newtab-button:after{
-  background: var(--theme-colors-toolbar_text);
+
 }
 
 .after-tabs [role="button"]:hover::before {
@@ -286,14 +286,17 @@ background-position-y: bottom;
       display: flex;
     }
   }
+  
   tab-favicon {
     transition: all 100ms ease-in-out var(--timeout-hide) !important;
     margin: 0 0 0 50%;
     transform: translateX(-50%) scale(1.5);
   }
+  
   tab-closebox{
   	display: none;
   }
+  
   .overflow-indicator.end {
     bottom: 0px;
   }
