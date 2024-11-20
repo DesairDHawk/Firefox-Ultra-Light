@@ -52,6 +52,11 @@
     min-width: var(--thin-tab-width) !important;
 }
 
+:root[inDOMFullscreen] .sidebar-before,
+:root[inDOMFullscreen] .sidebar-after {
+    visibility: collapse !important;
+}
+
 .sidebar-before,
 .sidebar-after {
     content: "";
