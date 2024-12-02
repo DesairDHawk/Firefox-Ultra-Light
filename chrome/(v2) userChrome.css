@@ -11,6 +11,7 @@
     min-width: 28px;
     cursor: pointer;
     max-width: 28px;
+    /* position: fixed; */
 }
 
 #urlbar-container::after {
@@ -18,8 +19,8 @@
     background-image: url(chrome://global/skin/icons/search-glass.svg);
     height: 16px;
     width: 16px;
-    position: absolute;
-    left: calc(50% - 8px);
+    position: relative;
+    margin: 6px;
 }
 
 #identity-icon-box {
@@ -66,7 +67,7 @@
     background-image: var(--lwt-additional-images, none);
     background-repeat: var(--lwt-background-tiling, none);
     background-position-x: left 100vh;
-    position: absolute;
+    position: absolute !important;
     z-index: 2;
     transition: width linear 0.05s;
 }
@@ -104,7 +105,7 @@
     transition: all 0.25s, height 0s !important;
     min-width: var(--wide-tab-width) !important;
     max-width: var(--wide-tab-width) !important;
-    z-index: 1;
+    z-index: 6;
 }
 
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"]:hover {
@@ -134,7 +135,7 @@ toolbarbutton {
 
 #navigator-toolbox {
     border-bottom: 0 !important;
-    position: absolute;
+    position: absolute !important;
     z-index: 5;
     width: var(--thin-tab-width);
     background-size: cover;
