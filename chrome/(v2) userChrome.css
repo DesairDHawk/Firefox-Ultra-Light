@@ -68,7 +68,7 @@
     background-repeat: var(--lwt-background-tiling, none);
     background-position-x: left 100vh;
     position: absolute !important;
-    z-index: 2;
+    z-index: 5;
     transition: width linear 0.05s;
 }
 
