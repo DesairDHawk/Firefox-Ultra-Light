@@ -6,21 +6,32 @@
 }
 
 #urlbar-container {
-    /* min-height: 43px; */
     min-height: 28px;
     min-width: 28px;
     cursor: pointer;
     max-width: 28px;
-    /* position: fixed; */
+    position: relative;
 }
 
 #urlbar-container::after {
     content: "";
-    background-image: url(chrome://global/skin/icons/search-glass.svg);
-    height: 16px;
-    width: 16px;
+    mask-image: url(chrome://global/skin/icons/search-glass.svg);
+    height: 28px;
+    width: 28px;
     position: relative;
-    margin: 6px;
+    background-color: var(--toolbarbutton-icon-fill);
+    mask-size: 16px;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+}
+
+#urlbar-container:hover:not(:has(#urlbar-input:focus))::before {
+    content: "";
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    background-color: var(--toolbarbutton-hover-background);
+    border-radius: 7px;
 }
 
 #identity-icon-box {
@@ -42,11 +53,14 @@
 
 #nav-bar {
     border-top: none !important;
+    border-radius: 7px;
+    margin: 3px;
 }
 
 :root {
-    --thin-tab-width: 56px;
+    --thin-tab-width: 62px;
     --wide-tab-width: 253px;
+    --toolbarbutton-border-radius: 7px !important;
 }
 
 #sidebar-box {
