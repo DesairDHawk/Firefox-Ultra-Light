@@ -76,7 +76,7 @@
 .sidebar-after {
     content: "";
     height: 10px;
-    width: 56px;
+    width: var(--thin-tab-width);
     background-color: var(--lwt-accent-color);
     background-image: var(--lwt-additional-images, none);
     background-repeat: var(--lwt-background-tiling, none);
@@ -96,7 +96,7 @@
 
 .sidebar-before.hovered,
 .sidebar-after.hovered {
-    width: 66px;
+    width: calc(var(--thin-tab-width) + 10px);
 }
 
 #sidebar-header {
