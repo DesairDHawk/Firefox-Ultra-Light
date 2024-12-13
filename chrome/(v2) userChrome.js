@@ -189,6 +189,7 @@ window.addEventListener("load", () => {
 
     // Получаем элемент #urlbar-container
     const urlbarContainer = document.getElementById("urlbar-container");
+    let placeholder = null;
     const urlbarInput = document.getElementById("urlbar-input"); // Поле ввода поисковой строки
     const urlbarSame = document.getElementById("urlbar");
     const urlbarView = document.querySelector(".urlbar-input-container");
@@ -214,6 +215,21 @@ window.addEventListener("load", () => {
 
     // Функция для установки min-width
     function setMinWidth() {
+        const rect = urlbar.getBoundingClientRect();
+
+        urlbarContainer.style.position = "absolute";
+
+        urlbarContainer.style.top = `${rect.top + window.scrollY - 22}px`;
+        urlbarContainer.style.left = `${rect.left + window.scrollX - 8}px`;
+
+        if (!placeholder) {
+            placeholder = document.createElement("div");
+            placeholder.style.width = `28px`;
+            placeholder.style.height = `28px`;
+            placeholder.style.flexShrink = "0";
+            urlbarContainer.parentNode.insertBefore(placeholder, urlbarContainer);
+        }
+
         urlbarContainer.style.minWidth = "440px";
         urlbarContainer.style.maxWidth = "540px";
         urlbarSame.style.marginLeft = "5px";
@@ -221,6 +237,16 @@ window.addEventListener("load", () => {
 
     // Функция для сброса min-width
     function removeMinWidth() {
+        urlbarContainer.style.position = "relative";
+
+        urlbarContainer.style.top = "unset";
+        urlbarContainer.style.left = "unset";
+
+        if (placeholder) {
+            placeholder.remove();
+            placeholder = null;
+        }
+
         urlbarContainer.style.minWidth = "";
         urlbarContainer.style.maxWidth = "28px";
         urlbarSame.style.marginLeft = "";
