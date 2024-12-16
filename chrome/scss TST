@@ -1,0 +1,54 @@
+tab-item {
+  overflow: hidden !important;
+  cursor: pointer;
+  padding: 1px;
+  margin-right: 1px;
+}
+
+tab-item::after{
+content: attr(data-current-uri);
+  color: var(--theme-colors-toolbar_field_text);
+  white-space: nowrap;
+  padding: 1px 6px 7px;
+  margin-top: -6px;
+  font-size: 10px;
+  mask-image: linear-gradient(to left, transparent 0, black 2em);
+}
+
+tab-item tab-label {
+  overflow-y: hidden !important;
+  white-space: wrap !important;
+  display: -webkit-inline-box !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-top: 7px;
+  margin-bottom: 12px;
+}
+
+tab-twisty{
+  display: none;
+}
+
+tab-item-substance .ui{
+  max-width: 100%;
+}
+
+tab-item tab-favicon{
+  margin-left: 0.25rem;
+}
+
+tab-item.active{
+  background: var(--theme-colors-tab_selected);
+  color: var(--theme-colors-toolbar_text);
+  border-radius: 4px;
+  border: 1px solid var(--theme-colors-tab_line);
+  padding: 0;
+}
+
+tab-item.active::after{
+  color: var(--theme-colors-tab_line);
+}
+
+tab-item .background{
+  display: none;
+}
