@@ -1,6 +1,3 @@
-userChrome.import("/userChrome/my_script_name.uc.js", "UChrm");
-userChrome.import("/userChrome/my_other_script_name.uc.js", "UChrm");
-
 // Function to handle navbar modifications
 function modifyNavBar() {
     const navBar = document.getElementById("nav-bar");
@@ -272,7 +269,7 @@ window.addEventListener("load", () => {
 
         if (sidebb && tabContainer) {
             // Проверяем, что элементы существуют
-            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 6;
+            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 12;
             if (tabsToHeight > maxAvailibleHeight) {
                 tabsToHeight = maxAvailibleHeight;
             }
