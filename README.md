@@ -12,13 +12,7 @@
 * [uBlock Origin](https://addons.mozilla.org/ru/firefox/addon/ublock-origin/)
 * [privacy Badger](https://addons.mozilla.org/ru/firefox/addon/privacy-badger17/)
 * [Translate Web Pages](https://addons.mozilla.org/ru/firefox/addon/translate-web-pages-custom/)
-* [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS: [Ссылка на код](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/scss%20TST)
-
-
-#### (Для 2 версии)
-```CSS
----
-```
+* [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS: [Для стандарта](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/scss%20TST) , [Для версии 2](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/(v2)%20scss%20TST)
 
 #### Тема
 Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
