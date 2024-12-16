@@ -14,7 +14,7 @@
 * [Translate Web Pages](https://addons.mozilla.org/ru/firefox/addon/translate-web-pages-custom/)
 * [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS:
 ```CSS
----
+[Ссылка на код](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/scss%20TST)
 ```
 
 #### (Для 2 версии)
