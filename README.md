@@ -15,7 +15,7 @@
 * [Tree Style Tab](https://addons.mozilla.org/ru/firefox/addon/tree-style-tab/), для этого расширения, в `настройках`, вставляем этот CSS: [Для стандарта](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/scss%20TST) , [Для версии 2](https://github.com/DesairDHawk/Firefox-Ultra-Light/blob/main/chrome/(v2)%20scss%20TST)
 
 #### Тема
-Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+Можно использовать любые темы. На скриншоте используется [Monokai Ryo Ocean](https://addons.mozilla.org/ru/firefox/addon/monokai-ryo-ocean/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) и стандартная (в темной и светлой теме системы вид может отличатся)
 #### Настройка браузера
 В адресной строке браузера пишем `about:config`, далее в поисковую строку на этой странице вставляем `true` для следующих параметров (если параметр не находит, то создайте его сами):
 * `javascript.enabled`
