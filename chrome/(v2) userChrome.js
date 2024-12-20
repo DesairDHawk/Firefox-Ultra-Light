@@ -259,8 +259,20 @@ window.addEventListener("load", () => {
         let tabsToHeight = 0;
 
         if (sidebb && tabContainer) {
-            // Проверяем, что элементы существуют
-            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 10;
+            let tabList = document.querySelectorAll("tab");
+            let pinned = 0;
+            let defaultTab = 0;
+            tabList.forEach((tab) => {
+                if (tab.hasAttribute("pinned")) {
+                    pinned += 1;
+                } else {
+                    defaultTab += 1;
+                }
+            });
+            pinned = Math.ceil(pinned / 2);
+
+            // Расчет высоты вкладок
+            tabsToHeight = defaultTab * 36 + pinned * 24 + 13;
             if (tabsToHeight > maxAvailibleHeight) {
                 tabsToHeight = maxAvailibleHeight;
             }
