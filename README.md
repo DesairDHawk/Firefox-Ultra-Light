@@ -2,7 +2,7 @@
 ![изображение](https://github.com/user-attachments/assets/8be2aac3-1e11-442f-8740-d8d3b362d95d)
 
 ## Версия 2
-![изображение](https://github.com/user-attachments/assets/a0ef3765-9c31-43d9-995b-d857749cb34d)
+![изображение](https://github.com/user-attachments/assets/ff31b50f-996a-4dfb-9df0-c6d062d1cdd5)
 
 ## Всё что нужно для установки
 #### Расширения
