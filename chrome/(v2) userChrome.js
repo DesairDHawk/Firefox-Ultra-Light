@@ -57,18 +57,6 @@ function updateSidebarHeaderHeight() {
             beforeElement.style.backgroundPositionY = `top`;
             beforeElement.style.top = `${navigatorToolbox.clientHeight}px`;
         }
-
-        // const style = document.createElement("style");
-        // style.innerHTML = `
-        // #sidebar-box::before,
-        // #sidebar-box::after {
-        //     background-size: auto ${computedHeight}px;
-        // }
-        // #sidebar-box::before{
-        //     background-position-y: top;
-        // }
-        // `;
-        // document.head.appendChild(style);
     }
 }
 
@@ -192,7 +180,8 @@ window.addEventListener("load", () => {
     const urlbarView = document.querySelector(".urlbar-input-container");
     const navBar = document.getElementById("nav-bar");
     // Назначаем обработчики событий focus и blur для поля ввода поисковой строки
-    urlbarSame.style.visibility = "hidden";
+    urlbarSame.style.opacity = "0";
+    urlbarSame.style.pointerEvents = "none";
 
     let isClicking = false;
 
@@ -200,7 +189,8 @@ window.addEventListener("load", () => {
         if (isClicking) return;
         isClicking = true;
 
-        urlbarSame.style.visibility = "unset";
+        urlbarSame.style.opacity = "1";
+        urlbarSame.style.pointerEvents = "auto";
         urlbarView.click();
         setMinWidth();
 
@@ -247,7 +237,8 @@ window.addEventListener("load", () => {
         urlbarContainer.style.minWidth = "";
         urlbarContainer.style.maxWidth = "28px";
         urlbarSame.style.marginLeft = "";
-        urlbarSame.style.visibility = "hidden";
+        urlbarSame.style.opacity = "0"; // Установить прозрачность
+        urlbarSame.style.pointerEvents = "none"; // Отключить взаимодействие
     }
 
     function checkAndRemoveMinWidth() {
@@ -269,7 +260,7 @@ window.addEventListener("load", () => {
 
         if (sidebb && tabContainer) {
             // Проверяем, что элементы существуют
-            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 12;
+            tabsToHeight = (tabContainer.childNodes.length - 1) * 36 + 10;
             if (tabsToHeight > maxAvailibleHeight) {
                 tabsToHeight = maxAvailibleHeight;
             }
