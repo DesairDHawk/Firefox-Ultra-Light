@@ -318,6 +318,16 @@ window.addEventListener("load", () => {
     } else {
         console.error("Контейнер вкладок не найден.");
     }
+
+    // Наблюдаем за изменениями атрибутов у вкладок
+    const tabObserver = new MutationObserver(updateSidebarHeight);
+    let tabs = document.querySelectorAll("tab");
+    tabs.forEach((tab) => {
+        tabObserver.observe(tab, { attributes: true });
+    });
+
+    // Обновляем высоту боковой панели при изменении атрибутов
+    tabObserver.observe(tabContainer, { attributes: true, subtree: true });
 });
 
 // Функция для переключения flexDirection у body
